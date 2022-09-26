@@ -1,0 +1,219 @@
+﻿<Window x:Class="Bookshop.Transactions"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Bookshop"
+        mc:Ignorable="d"
+        Title="Transactions" Height="1080" Width="1920" WindowState="Maximized">
+    <Grid HorizontalAlignment="Center" Width="1920" Height="1080" VerticalAlignment="Top">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="100*"/>
+            <RowDefinition Height="783*"/>
+            <RowDefinition Height="197*"/>
+        </Grid.RowDefinitions>
+
+        <Label x:Name="lblISBN" Content="" HorizontalAlignment="Left" Height="73" Margin="345,489,0,0" Grid.Row="1" VerticalAlignment="Top" Width="319" Foreground="White"/>
+        <Label Content="Transactions" HorizontalAlignment="Center" Height="78" VerticalAlignment="Top" Width="242" FontSize="72" FontFamily="Freestyle Script" Foreground="#FFE66666"/>
+        <TextBox x:Name="txtISBN" HorizontalAlignment="Left" Height="32" Margin="78,518,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="261" FontFamily="Corbel Light" FontSize="20" Foreground="#FFBB6F6F" Grid.Row="1" IsEnabled="False" Background="White" BorderBrush="#FF987979"/>
+        <TextBox x:Name="txtCustomer_id" HorizontalAlignment="Left" Height="34" Margin="143,395,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="196" BorderBrush="#FF987979" FontFamily="Corbel Light" FontSize="20" Foreground="#FFBB6F6F" IsEnabled="False" Grid.Row="1"/>
+        <TextBox x:Name="txtQuatity" HorizontalAlignment="Left" Height="32" Margin="78,690,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="262" FontFamily="Corbel Light" FontSize="20" Foreground="#FFBB6F6F" Grid.Row="1" IsEnabled="False" Background="White" BorderBrush="#FF987979"/>
+        <TextBox x:Name="txtTotal_Price" HorizontalAlignment="Left" Height="32" Margin="78,748,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="200" FontFamily="Corbel Light" FontSize="20" Foreground="#FFBB6F6F" Grid.Row="1" IsEnabled="False" Background="White" BorderBrush="#FF987979"/>
+        <Button x:Name="btnCalculater" Content="Cal" HorizontalAlignment="Left" Height="38" Margin="606,576,0,0" VerticalAlignment="Top" Width="116" Background="#FFFDC9C9" Foreground="White" FontFamily="Corbel" BorderBrush="#FFDA9090" FontSize="20" Click="btnCalculater_Click" Grid.Row="1"/>
+        <DataGrid x:Name="dtgTransactions" Margin="998,53,0,0" d:ItemsSource="{d:SampleData ItemCount=1000}" IsSynchronizedWithCurrentItem="True" HorizontalAlignment="Left" Width="800" Height="687" VerticalAlignment="Top" Grid.Row="1" FontSize="18" IsReadOnly="True" MouseDoubleClick="dtgTransactions_MouseDoubleClick_1"/>
+        <!--<DataGrid.Columns>
+                <DataGridTextColumn Header="ISBN" Binding="{Binding Path=ISBN}"/>
+            </DataGrid.Columns>
+            </DataGrid>-->
+
+        <Label Content="Total  Price" HorizontalAlignment="Left" Height="42" Margin="78,722,0,0" VerticalAlignment="Top" Width="130" FontFamily="Corbel" FontSize="16" Foreground="#FFC17878" RenderTransformOrigin="0.5,0.5" Grid.Row="1">
+            <Label.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform AngleX="0"/>
+                    <RotateTransform/>
+                    <TranslateTransform X="0"/>
+                </TransformGroup>
+            </Label.RenderTransform>
+        </Label>
+        <Label Content="Quatity" HorizontalAlignment="Left" Height="42" Margin="78,664,0,0" VerticalAlignment="Top" Width="130" FontFamily="Corbel" FontSize="16" Foreground="#FFC17878" RenderTransformOrigin="0.5,0.5" Grid.Row="1">
+            <Label.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform AngleX="0"/>
+                    <RotateTransform/>
+                    <TranslateTransform X="0"/>
+                </TransformGroup>
+            </Label.RenderTransform>
+        </Label>
+        <Label Content="ID :" HorizontalAlignment="Left" Height="32" Margin="81,397,0,0" VerticalAlignment="Top" Width="30" FontFamily="Corbel" FontSize="16" Foreground="#FFC17878" RenderTransformOrigin="0.5,0.5" Grid.Row="1">
+            <Label.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform AngleX="0"/>
+                    <RotateTransform/>
+                    <TranslateTransform X="0"/>
+                </TransformGroup>
+            </Label.RenderTransform>
+        </Label>
+        <Label Content="ISBN" HorizontalAlignment="Left" Height="32" Margin="78,488,0,0" VerticalAlignment="Top" Width="130" FontFamily="Corbel" FontSize="16" Foreground="#FFC17878" RenderTransformOrigin="0.5,0.5" Grid.Row="1">
+            <Label.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform AngleX="0"/>
+                    <RotateTransform/>
+                    <TranslateTransform X="0"/>
+                </TransformGroup>
+            </Label.RenderTransform>
+        </Label>
+        <TextBox x:Name="txtSearch_book" HorizontalAlignment="Left" Height="32" Margin="360,518,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="230" FontSize="18" FontFamily="Corbel Light" Foreground="#FFBB6F6F" BorderBrush="#FF9C5454" Grid.Row="1" Background="#FFF9FFD2"/>
+        <Button x:Name="btnSearch_book" Content="Search Book" HorizontalAlignment="Left" Height="42" Margin="606,508,0,0" VerticalAlignment="Top" Width="115" Background="#FFFDC9C9" Foreground="White" FontFamily="Corbel" FontSize="20" BorderBrush="#FFDA9090" Click="btnSearch_Click" Grid.Row="1"/>
+        <TextBox x:Name="txtPrice" HorizontalAlignment="Left" Height="34" Margin="78,632,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="262" FontFamily="Corbel Light" FontSize="20" Foreground="#FFBB6F6F" Grid.Row="1" Background="White" BorderBrush="#FF987979" IsEnabled="False"/>
+        <Label Content="Price" HorizontalAlignment="Left" Height="42" Margin="78,606,0,0" VerticalAlignment="Top" Width="130" FontFamily="Corbel" FontSize="16" Foreground="#FFC17878" RenderTransformOrigin="0.5,0.5" Grid.Row="1">
+            <Label.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform AngleX="0"/>
+                    <RotateTransform/>
+                    <TranslateTransform X="0"/>
+                </TransformGroup>
+            </Label.RenderTransform>
+        </Label>
+        <TextBox x:Name="txtCustomer_name" HorizontalAlignment="Left" Height="32" Margin="143,440,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="194" BorderBrush="#FF987979" FontFamily="Corbel Light" FontSize="20" Foreground="#FFBB6F6F" Grid.Row="1" IsEnabled="False"/>
+        <TextBox x:Name="txtCheck_customerid" Margin="360,438,0,0" TextWrapping="Wrap" FontSize="18" FontFamily="Corbel Light" Foreground="#FFBB6F6F" BorderBrush="#FF9C5454" HorizontalAlignment="Left" Width="230" Height="34" VerticalAlignment="Top" Grid.Row="1" Background="#FFF9FFD2"/>
+        <Button x:Name="btnCheck_customerid" Content="Check Customer_ID" HorizontalAlignment="Left" Margin="606,434,0,307" Width="166" Background="#FFFDC9C9" Foreground="White" FontFamily="Corbel" FontSize="20" BorderBrush="#FFDA9090" Click="btnCheck_customerid_Click" Grid.Row="1"/>
+        <TextBox x:Name="txtInsert_quatity" HorizontalAlignment="Left" Height="34" Margin="362,583,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="223" BorderBrush="#FF9C5454" FontFamily="Corbel Light" FontSize="20" Foreground="#FFBB6F6F" RenderTransformOrigin="0.5,0.5" Grid.Row="1" Background="#FFF9FFD2">
+            <TextBox.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-0.031"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </TextBox.RenderTransform>
+        </TextBox>
+        <Label Content="Insert Customer ID" HorizontalAlignment="Left" Height="42" Margin="350,408,0,0" VerticalAlignment="Top" Width="144" FontFamily="Corbel" FontSize="16" Foreground="#FFC17878" RenderTransformOrigin="0.5,0.5" Grid.Row="1">
+            <Label.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform AngleX="0"/>
+                    <RotateTransform/>
+                    <TranslateTransform X="0"/>
+                </TransformGroup>
+            </Label.RenderTransform>
+        </Label>
+        <Label Content="Insert ISBN" HorizontalAlignment="Left" Height="42" Margin="360,483,0,0" VerticalAlignment="Top" Width="130" FontFamily="Corbel" FontSize="16" Foreground="#FFC17878" RenderTransformOrigin="0.5,0.5" Grid.Row="1">
+            <Label.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform AngleX="0"/>
+                    <RotateTransform/>
+                    <TranslateTransform X="0"/>
+                </TransformGroup>
+            </Label.RenderTransform>
+        </Label>
+        <Label Content="List Order Customer" HorizontalAlignment="Left" Height="42" Margin="54,90,0,0" VerticalAlignment="Top" Width="198" FontFamily="Corbel" FontSize="22" Foreground="#FFC17878" RenderTransformOrigin="0.5,0.5" FontWeight="Bold" Grid.RowSpan="2">
+            <Label.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform AngleX="0"/>
+                    <RotateTransform/>
+                    <TranslateTransform X="0"/>
+                </TransformGroup>
+            </Label.RenderTransform>
+        </Label>
+        <Label Content="Insert Quatity" HorizontalAlignment="Left" Height="42" Margin="357,555,0,0" VerticalAlignment="Top" Width="130" FontFamily="Corbel" FontSize="16" Foreground="#FFC17878" RenderTransformOrigin="0.5,0.5" Grid.Row="1">
+            <Label.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform AngleX="0"/>
+                    <RotateTransform/>
+                    <TranslateTransform X="0"/>
+                </TransformGroup>
+            </Label.RenderTransform>
+        </Label>
+        <TextBox x:Name="txtTitle" HorizontalAlignment="Left" Height="34" Margin="78,574,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="262" FontFamily="Corbel Light" FontSize="20" Foreground="#FFBB6F6F" Grid.Row="1" IsEnabled="False" Background="White" BorderBrush="#FF987979"/>
+        <Label Content="Title" HorizontalAlignment="Left" Height="42" Margin="78,548,0,0" VerticalAlignment="Top" Width="130" FontFamily="Corbel" FontSize="16" Foreground="#FFC17878" RenderTransformOrigin="0.5,0.5" Grid.Row="1">
+            <Label.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform AngleX="0"/>
+                    <RotateTransform/>
+                    <TranslateTransform X="0"/>
+                </TransformGroup>
+            </Label.RenderTransform>
+        </Label>
+        <ListBox x:Name="lbxShow" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="88,30,1148,398" Grid.Row="1" FontSize="18"/>
+        <Button x:Name="btnAddListOrder" Content="Add to craft" HorizontalAlignment="Left" Height="52" Margin="364,649,0,0" VerticalAlignment="Top" Width="152" Background="#FFFDC9C9" Foreground="White" FontFamily="Corbel" BorderBrush="#FFDA9090" FontSize="20" Click="btnAddListOrder_Click" Grid.Row="1"/>
+        <Button x:Name="btnBuy" Content="Buy" HorizontalAlignment="Left" Height="52" Margin="192,24,0,0" VerticalAlignment="Top" Width="152" Background="#FFFDC9C9" Foreground="White" FontFamily="Corbel" BorderBrush="#FFDA9090" FontSize="20" Click="btnBuy_Click" Grid.Row="2"/>
+        <Label Content="Bill" HorizontalAlignment="Left" Height="42" Margin="1015,95,0,0" VerticalAlignment="Top" Width="98" FontFamily="Corbel" FontSize="22" Foreground="#FFC17878" RenderTransformOrigin="0.5,0.5" FontWeight="Bold" Grid.RowSpan="2">
+            <Label.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform AngleX="0"/>
+                    <RotateTransform/>
+                    <TranslateTransform X="0"/>
+                </TransformGroup>
+            </Label.RenderTransform>
+        </Label>
+        <Label Content="NAME :" HorizontalAlignment="Left" Height="32" Margin="81,440,0,0" VerticalAlignment="Top" Width="62" FontFamily="Corbel" FontSize="16" Foreground="#FFC17878" RenderTransformOrigin="0.5,0.5" Grid.Row="1">
+            <Label.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform AngleX="0"/>
+                    <RotateTransform/>
+                    <TranslateTransform X="0"/>
+                </TransformGroup>
+            </Label.RenderTransform>
+        </Label>
+        <TextBox x:Name="txtTotal_amount" Margin="502,340,1226,413" TextWrapping="Wrap" BorderBrush="{x:Null}" FontFamily="Microsoft YaHei Light" FontSize="20" Foreground="#FF923333" Grid.Row="1" TextAlignment="Center" IsEnabled="False"/>
+        <Label Content="Total Amount" HorizontalAlignment="Left" Height="40" Margin="386,340,0,0" VerticalAlignment="Top" Width="112" FontFamily="Corbel" FontSize="18" Foreground="#FFC17878" RenderTransformOrigin="0.5,0.5" Grid.Row="1">
+            <Label.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform AngleX="0"/>
+                    <RotateTransform/>
+                    <TranslateTransform X="0"/>
+                </TransformGroup>
+            </Label.RenderTransform>
+        </Label>
+        <Label Content="Baht" HorizontalAlignment="Left" Height="32" Margin="283,743,0,0" VerticalAlignment="Top" Width="61" FontFamily="Corbel" FontSize="18" Foreground="#FFC17878" RenderTransformOrigin="0.5,0.5" Grid.Row="1">
+            <Label.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform AngleX="0"/>
+                    <RotateTransform/>
+                    <TranslateTransform X="0"/>
+                </TransformGroup>
+            </Label.RenderTransform>
+        </Label>
+        <Label Content="Baht" HorizontalAlignment="Left" Height="30" Margin="712,340,0,0" VerticalAlignment="Top" Width="60" FontFamily="Corbel" FontSize="18" Foreground="#FFC17878" RenderTransformOrigin="0.5,0.5" Grid.Row="1">
+            <Label.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform AngleX="0"/>
+                    <RotateTransform/>
+                    <TranslateTransform X="0"/>
+                </TransformGroup>
+            </Label.RenderTransform>
+        </Label>
+        <Button x:Name="btnRemoveall" Content="Reset" HorizontalAlignment="Left" Height="48" Margin="78,26,0,0" VerticalAlignment="Top" Width="92" Background="#FFFDC9C9" Foreground="White" FontFamily="Corbel" BorderBrush="#FFDA9090" FontSize="20" Grid.Row="2" Click="btnRemoveall_Click"/>
+        <Button x:Name="btnSearch_Transection" Content="All order" HorizontalAlignment="Left" Height="48" Margin="845,60,0,0" VerticalAlignment="Top" Width="115" Background="#FFFDC9C9" Foreground="White" FontFamily="Corbel" BorderBrush="#FFDA9090" FontSize="20" Grid.Row="1" Click="btnSearch_Transection_Click"/>
+        <Label x:Name="lblISBN_Copy" Content="" HorizontalAlignment="Left" Height="74" Margin="966,19,0,0" Grid.Row="2" VerticalAlignment="Top" Width="319" Foreground="White"/>
+        <TextBox x:Name="txtISBNfrombill" HorizontalAlignment="Left" Height="32" Margin="997,55,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="266" FontSize="18" FontFamily="Corbel Light" Foreground="#FFBB6F6F" BorderBrush="#FF9C5454" Grid.Row="2" Background="#FFF9FFD2"/>
+        <Label Content="ISBN" HorizontalAlignment="Left" Height="42" Margin="997,19,0,0" VerticalAlignment="Top" Width="130" FontFamily="Corbel" FontSize="16" Foreground="#FFC17878" RenderTransformOrigin="0.5,0.5" Grid.Row="2">
+            <Label.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform AngleX="0"/>
+                    <RotateTransform/>
+                    <TranslateTransform X="0"/>
+                </TransformGroup>
+            </Label.RenderTransform>
+        </Label>
+        <Button x:Name="btnDelete" Content="Delete" HorizontalAlignment="Left" Height="52" Margin="1290,45,0,0" VerticalAlignment="Top" Width="152" Background="#FFFDC9C9" Foreground="White" FontFamily="Corbel" BorderBrush="#FFDA9090" FontSize="20" Grid.Row="2" Click="btnDelete_Click"/>
+        <Button x:Name="btnMenu" Content="Menu" HorizontalAlignment="Left" Height="45" Margin="9,6,0,0" VerticalAlignment="Top" Width="55" BorderBrush="#FFFFF2EE" Background="#FFED8971" FontSize="18" Foreground="White" Click="btnMenu_Click" FontWeight="Normal"/>
+        <Button x:Name="btnSearch" Content="Search" HorizontalAlignment="Left" Height="48" Margin="1635,96,0,0" VerticalAlignment="Top" Width="118" Grid.RowSpan="2" Background="#FFFDC9C9" BorderBrush="#FFDA9090" Foreground="White" FontSize="20" FontFamily="Corbel" Click="btnSearch_Click_1"/>
+        <TextBox x:Name="txtSearchBill" HorizontalAlignment="Left" Height="34" Margin="1130,3,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="475" FontSize="23" FontFamily="Corbel Light" Foreground="#FFBB6F6F" BorderBrush="#FF9C5454"/>
+    </Grid>
+</Window>

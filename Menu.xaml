@@ -1,0 +1,32 @@
+﻿<Window x:Class="Bookshop.Menu"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Bookshop"
+        mc:Ignorable="d"
+        Title="Menu" Height="500" Width="850">
+    <Grid>
+
+        <Label Content="Menu" HorizontalAlignment="Left" Height="90" Margin="358,10,0,0" VerticalAlignment="Top" Width="104" FontSize="72" FontFamily="Freestyle Script" Foreground="#FFE66666"/>
+        <Button x:Name="btnBooks" Content="" HorizontalAlignment="Left" Height="94" Margin="133,186,0,0" VerticalAlignment="Top" Width="115" BorderBrush="#FFE4ADA0" Click="btnBooks_Click">
+            <Button.Background>
+                <ImageBrush ImageSource="/a5434405abd20db3e54e2f86ef514db4.jpg"/>
+            </Button.Background>
+        </Button>
+        <Button x:Name="btnCustomers" Content="" HorizontalAlignment="Left" Height="94" Margin="358,186,0,0" VerticalAlignment="Top" Width="112" BorderBrush="#FFEFE9D4" Click="btnCustomers_Click">
+            <Button.Background>
+                <ImageBrush ImageSource="/6e39fb54c3ec6841dcffb8cab9c8480e.jpg"/>
+            </Button.Background>
+        </Button>
+        <Button x:Name="btnTransactions" Content="" HorizontalAlignment="Left" Height="94" Margin="571,186,0,0" VerticalAlignment="Top" Width="112" BorderBrush="#FFE4ADA0" Click="btnTransactions_Click">
+            <Button.Background>
+                <ImageBrush ImageSource="/76cffe6aaa7a307492449f93cf6caa9a.jpg"/>
+            </Button.Background>
+        </Button>
+        <Label Content="Books" HorizontalAlignment="Left" Height="32" Margin="160,285,0,0" VerticalAlignment="Top" Width="60" FontFamily="Corbel" Foreground="#FFBD6D6D" FontSize="18"/>
+        <Label Content="Customers" HorizontalAlignment="Left" Height="32" Margin="369,285,0,0" VerticalAlignment="Top" Width="90" FontFamily="Corbel" Foreground="#FFBD6D6D" FontSize="18"/>
+        <Label Content="Transactions" HorizontalAlignment="Left" Height="32" Margin="571,285,0,0" VerticalAlignment="Top" Width="112" FontFamily="Corbel" Foreground="#FFBD6D6D" FontSize="18"/>
+
+    </Grid>
+</Window>

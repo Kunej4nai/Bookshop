@@ -1,0 +1,28 @@
+﻿<Window x:Class="Bookshop.Books"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Bookshop"
+        mc:Ignorable="d"
+        Title="Books" Height="500" Width="850">
+    <Grid>
+        <Label Content="Books" HorizontalAlignment="Left" Height="80" Margin="339,0,0,0" VerticalAlignment="Top" Width="136" FontSize="72" FontFamily="Freestyle Script" Foreground="#FFE66666"/>
+        <TextBox x:Name="txtISBN" HorizontalAlignment="Left" Height="33" Margin="50,129,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="261" FontSize="20" FontFamily="Corbel Light" Foreground="#FFBB6F6F" BorderBrush="#FF9C5454"/>
+        <TextBox x:Name="txtTitle" HorizontalAlignment="Left" Height="33" Margin="50,184,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="261" FontSize="20" FontFamily="Corbel Light" Foreground="#FFBB6F6F" BorderBrush="#FF9C5454"/>
+        <TextBox x:Name="txtDescription" HorizontalAlignment="Left" Height="33" Margin="50,242,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="261" FontSize="20" FontFamily="Corbel Light" Foreground="#FFBB6F6F" BorderBrush="#FF9C5454"/>
+        <TextBox x:Name="txtPrice" HorizontalAlignment="Left" Height="33" Margin="50,297,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="260" FontSize="20" FontFamily="Corbel Light" Foreground="#FFBB6F6F" BorderBrush="#FF9C5454"/>
+        <DataGrid x:Name="dtgBooks" HorizontalAlignment="Left" Height="262" Margin="360,166,0,0" VerticalAlignment="Top" Width="436" d:ItemsSource="{d:SampleData ItemCount=5}"/>
+        <TextBox x:Name="txtSearch" HorizontalAlignment="Left" Height="33" Margin="387,108,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="282" FontSize="18" FontFamily="Corbel Light" Foreground="#FFBB6F6F" BorderBrush="#FF9C5454"/>
+        <Button x:Name="btnSearch" Content="Search" HorizontalAlignment="Left" Height="43" Margin="689,103,0,0" VerticalAlignment="Top" Width="65" Background="#FFFDC9C9" Foreground="White" FontFamily="Corbel" FontSize="20" BorderBrush="#FFDA9090" Click="btnSearch_Click"/>
+        <Button x:Name="btnAdd" Content="Add" HorizontalAlignment="Left" Height="50" Margin="36,353,0,0" VerticalAlignment="Top" Width="76" BorderBrush="#FFDA9090" Background="#FFFDC9C9" Foreground="White" FontFamily="Corbel" FontSize="20" FontWeight="Normal" Click="btnAdd_Click"/>
+        <Button x:Name="btnEdit" Content="Edit" HorizontalAlignment="Left" Height="50" Margin="142,353,0,0" VerticalAlignment="Top" Width="76" BorderBrush="#FFDA9090" Background="#FFFDC9C9" Foreground="White" FontFamily="Corbel" FontSize="20" FontWeight="Normal" Click="btnEdit_Click"/>
+        <Button x:Name="btnDelete" Content="Delete" HorizontalAlignment="Left" Height="50" Margin="247,353,0,0" VerticalAlignment="Top" Width="76" BorderBrush="#FFDA9090" Background="#FFFDC9C9" Foreground="White" FontFamily="Corbel" FontSize="20" FontWeight="Normal" Click="btnDelete_Click"/>
+        <Label Content="ISBN" HorizontalAlignment="Left" Height="38" Margin="50,102,0,0" VerticalAlignment="Top" Width="80" FontSize="16" Foreground="#FFC17878" FontFamily="Corbel"/>
+        <Label Content="Title" HorizontalAlignment="Left" Height="27" Margin="50,157,0,0" VerticalAlignment="Top" Width="80" FontSize="16" Foreground="#FFC17878" FontFamily="Corbel"/>
+        <Label Content="Description" HorizontalAlignment="Left" Height="34" Margin="50,217,0,0" VerticalAlignment="Top" Width="130" FontSize="16" Foreground="#FFC17878" FontFamily="Corbel"/>
+        <Label Content="Price" HorizontalAlignment="Left" Height="38" Margin="50,268,0,0" VerticalAlignment="Top" Width="80" FontSize="16" Foreground="#FFC17878" FontFamily="Corbel"/>
+        <Button x:Name="btnMenu" Content="Menu" HorizontalAlignment="Left" Height="45" Margin="9,6,0,0" VerticalAlignment="Top" Width="55" BorderBrush="#FFFFF2EE" Background="#FFED8971" FontSize="18" Foreground="White" Click="btnMenu_Click" FontWeight="Normal"/>
+
+    </Grid>
+</Window>
